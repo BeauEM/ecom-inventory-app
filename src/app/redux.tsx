@@ -23,7 +23,7 @@ import {
 import { PersistGate } from "redux-persist/integration/react";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
-/* REDUX PERSISTENCE */
+/* REDUX PERSISTENCE - setup local storage state */
 const createNoopStorage = () => {
   return {
     getItem(_key: any) {
@@ -43,6 +43,7 @@ const storage =
     ? createNoopStorage()
     : createWebStorage("local");
 
+//persist data into local storage
 const persistConfig = {
   key: "root",
   storage,
